@@ -2,15 +2,10 @@ dist: latest
 language: python
 
 python:
-  - 2.7
   - 3.5
-  - 3.6
-  - 3.7
+  - 3.8
 
 env:
-  - TOXENV=django111
-  - TOXENV=django20
-  - TOXENV=django21
   - TOXENV=django22
 
 matrix:
@@ -19,19 +14,18 @@ matrix:
       env: TOXENV=quality
     - python: 3.5
       env: TOXENV=docs
-  exclude:
-    - python: 2.7
-      env: TOXENV=django20
-    - python: 2.7
-      env: TOXENV=django21
-    - python: 2.7
-      env: TOXENV=django22
+    - python: 3.8
+      env: TOXENV=quality
+    - python: 3.8
+      env: TOXENV=docs
+
+  allow_failures:
+    - python: 3.8
 
 cache:
 - pip
 before_install:
-- pip install --upgrade pip
-- pip install --upgrade setuptools
+- pip install -r requirements/pip-tools.txt
 install:
 - make upgrade
 - pip install -r requirements/travis.txt

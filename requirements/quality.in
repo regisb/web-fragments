@@ -1,6 +1,7 @@
 # Requirements for code quality checks
 
-django
+# Stay on an LTS release
+django<2.3
 
 caniusepython3            # Additional Python 3 compatibility pylint checks
 isort                     # to standardize order of imports

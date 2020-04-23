@@ -1,0 +1,6 @@
+# Allows us to generate version pins with `pip-compile`, and install
+# them deterministically with `pip-sync`.
+# `pip-compile` itself is used to generate pip-tools.txt.
+
+# pip20+ requires for greater version of pip-tools. But installing 19.3.1 in all our containers and VMs.
+pip-tools==4.5.1
